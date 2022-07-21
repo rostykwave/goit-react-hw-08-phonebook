@@ -1,25 +1,44 @@
-import { ContactForm } from './components/ContactForm';
-import { ContactList } from './components/ContactList';
-import { Container } from './components/Container';
-import { Filter } from './components/Filter';
-import { contactsOperations } from 'redux/contacts';
+// import { contactsOperations } from 'redux/contacts';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { authOperations } from './redux/auth';
+import { ContactsPage } from 'pages/ContactsPage';
+import { HomePage } from 'pages/HomePage';
+import { LoginPage } from 'pages/LoginPage';
+import { RegisterPage } from 'pages/RegisterPage';
+import { Routes, Route } from 'react-router-dom';
+import { AppBar } from 'components/AppBar/AppBar';
 
 export const App = () => {
   const dispatch = useDispatch();
 
+  // useEffect(() => {
+  //   dispatch(contactsOperations.fetchContacts());
+  // }, [dispatch]);
+
   useEffect(() => {
-    dispatch(contactsOperations.fetchContacts());
+    dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
 
   return (
-    <Container>
-      <h1>PhoneBook</h1>
-      <ContactForm />
-      <h1>Contacts</h1>
-      <Filter />
-      <ContactList />
-    </Container>
+    <Routes>
+      <Route path="/" element={<AppBar />}>
+        <Route index element={<HomePage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+      </Route>
+    </Routes>
+    // <Container>
+    //   <h1>PhoneBook</h1>
+    //   <ContactForm />
+    //   <h1>Contacts</h1>
+    //   <Filter />
+    //   <ContactList />
+    // </Container>
   );
 };
+
+///Formik
+//Material UI
+//SharedComponent
