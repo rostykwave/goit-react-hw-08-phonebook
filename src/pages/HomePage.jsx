@@ -3,7 +3,7 @@ import { Container } from 'components/Container';
 const HomePage = () => {
   return (
     <Container>
-      <h1>Hello</h1>
+      <h1>Let`s create your new PhoneBook</h1>
     </Container>
   );
 };

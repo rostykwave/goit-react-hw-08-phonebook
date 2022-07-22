@@ -24,26 +24,21 @@
 // };
 import { Box } from 'styleConfig/Box';
 import { Container } from 'components/Container';
-import { Header, StyledLink } from './AppBar.styled';
-import { UserMenu } from 'components/UserMenu';
+import { Header } from './AppBar.styled';
+import { UserMenu } from 'components/AppBar/UserMenu';
+import { Navigation } from './Navigation';
+import { AuthNav } from './AuthNav';
+import { useSelector } from 'react-redux';
+import { authSelectors } from 'redux/auth';
 
 export const AppBar = () => {
-  // const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
-    // <header style={styles.header}>
-    //   <Navigation />
-    //   {isLoggedIn ? <UserMenu /> : <AuthNav />}
-    // </header>
     <Box boxShadow="header">
       <Container>
         <Header>
-          <nav>
-            <StyledLink to="/">Home</StyledLink>
-            <StyledLink to="/contacts">Phonebook</StyledLink>
-            <StyledLink to="/register">Register</StyledLink>
-            <StyledLink to="/login">Login</StyledLink>
-          </nav>
-          <UserMenu />
+          <Navigation />
+          {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </Header>
       </Container>
     </Box>
