@@ -7,7 +7,8 @@ import { HomePage } from 'pages/HomePage';
 import { LoginPage } from 'pages/LoginPage';
 import { RegisterPage } from 'pages/RegisterPage';
 import { Routes, Route } from 'react-router-dom';
-import { AppBar } from 'components/AppBar/AppBar';
+// import { AppBar } from 'components/AppBar/AppBar';
+import { SharedLayout } from 'layout';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ export const App = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<AppBar />}>
+      <Route path="/" element={<SharedLayout />}>
         <Route index element={<HomePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />

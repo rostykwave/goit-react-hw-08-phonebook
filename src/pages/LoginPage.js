@@ -38,11 +38,11 @@ export const LoginPage = () => {
 
   return (
     <div>
-      <h1>Страница логина</h1>
+      <h1>Login Page</h1>
 
       <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
         <label style={styles.label}>
-          Почта
+          Mail
           <input
             type="email"
             name="email"
@@ -52,7 +52,7 @@ export const LoginPage = () => {
         </label>
 
         <label style={styles.label}>
-          Пароль
+          Password
           <input
             type="password"
             name="password"
@@ -61,7 +61,7 @@ export const LoginPage = () => {
           />
         </label>
 
-        <button type="submit">Войти</button>
+        <button type="submit">Log in</button>
       </form>
     </div>
   );
