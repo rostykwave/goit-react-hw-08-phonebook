@@ -22,12 +22,12 @@ const FormError = ({ name }) => {
 
 const schema = yup.object().shape({
   name: yup.string().required(),
-  phone: yup.string().min(6).max(13).required(),
+  number: yup.string().min(6).max(13).required(),
 });
 
 const initialValues = {
   name: '',
-  phone: '',
+  number: '',
 };
 
 //main form
@@ -60,10 +60,10 @@ export const ContactForm = () => {
           <FormLabel>Phone number</FormLabel>
           <StyledInput
             type="tel"
-            name="phone"
+            name="number"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           />
-          <FormError name="phone" />
+          <FormError name="number" />
         </FormField>
         <SubmitBtn type="submit">Add contact</SubmitBtn>
       </StyledForm>
