@@ -9,6 +9,7 @@ import { RegisterPage } from 'pages/RegisterPage';
 import { Routes, Route } from 'react-router-dom';
 // import { AppBar } from 'components/AppBar/AppBar';
 import { SharedLayout } from 'layout';
+import { PrivateRoutes } from 'components/PrivateRoutes';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -27,7 +28,10 @@ export const App = () => {
         <Route index element={<HomePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/contacts" element={<ContactsPage />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="/contacts" element={<ContactsPage />} />
+        </Route>
+        {/* <PrivateRoute path="/contacts" element={<ContactsPage />} /> */}
       </Route>
     </Routes>
     // <Container>

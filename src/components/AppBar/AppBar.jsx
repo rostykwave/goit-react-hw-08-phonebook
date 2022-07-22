@@ -25,6 +25,7 @@
 import { Box } from 'styleConfig/Box';
 import { Container } from 'components/Container';
 import { Header, StyledLink } from './AppBar.styled';
+import { UserMenu } from 'components/UserMenu';
 
 export const AppBar = () => {
   // const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
@@ -42,6 +43,7 @@ export const AppBar = () => {
             <StyledLink to="/register">Register</StyledLink>
             <StyledLink to="/login">Login</StyledLink>
           </nav>
+          <UserMenu />
         </Header>
       </Container>
     </Box>
