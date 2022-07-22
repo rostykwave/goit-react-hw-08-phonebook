@@ -10,6 +10,7 @@ import { Routes, Route } from 'react-router-dom';
 // import { AppBar } from 'components/AppBar/AppBar';
 import { SharedLayout } from 'layout';
 import { PrivateRoutes } from 'components/PrivateRoutes';
+import { PublicRoutes } from 'components/PublicRoutes';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -26,8 +27,10 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route element={<PublicRoutes />}>
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Route>
         <Route element={<PrivateRoutes />}>
           <Route path="/contacts" element={<ContactsPage />} />
         </Route>
