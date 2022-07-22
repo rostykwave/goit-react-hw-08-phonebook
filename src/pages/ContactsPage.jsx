@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { contactsOperations } from 'redux/contacts';
 import { useDispatch } from 'react-redux';
 
-export const ContactsPage = () => {
+const ContactsPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,3 +23,5 @@ export const ContactsPage = () => {
     </Container>
   );
 };
+
+export default ContactsPage;

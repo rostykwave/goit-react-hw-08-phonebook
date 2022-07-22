@@ -1,16 +1,17 @@
-// import { contactsOperations } from 'redux/contacts';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from './redux/auth';
-import { ContactsPage } from 'pages/ContactsPage';
-import { HomePage } from 'pages/HomePage';
-import { LoginPage } from 'pages/LoginPage';
-import { RegisterPage } from 'pages/RegisterPage';
 import { Routes, Route } from 'react-router-dom';
-// import { AppBar } from 'components/AppBar/AppBar';
-import { SharedLayout } from 'layout';
+import SharedLayout from 'layout/SharedLayout';
 import { PrivateRoutes } from 'components/PrivateRoutes';
 import { PublicRoutes } from 'components/PublicRoutes';
+import { lazy } from 'react';
+
+const HomePage = lazy(() => import('pages/HomePage'));
+const LoginPage = lazy(() => import('pages/LoginPage'));
+const RegisterPage = lazy(() => import('pages/RegisterPage'));
+const ContactsPage = lazy(() => import('pages/ContactsPage'));
+const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -34,16 +35,9 @@ export const App = () => {
         <Route element={<PrivateRoutes />}>
           <Route path="/contacts" element={<ContactsPage />} />
         </Route>
-        {/* <PrivateRoute path="/contacts" element={<ContactsPage />} /> */}
+        <Route path="/*" element={<NotFoundPage />} />
       </Route>
     </Routes>
-    // <Container>
-    //   <h1>PhoneBook</h1>
-    //   <ContactForm />
-    //   <h1>Contacts</h1>
-    //   <Filter />
-    //   <ContactList />
-    // </Container>
   );
 };
 

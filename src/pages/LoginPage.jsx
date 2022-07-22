@@ -13,7 +13,7 @@ const styles = {
   },
 };
 
-export const LoginPage = () => {
+const LoginPage = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -66,3 +66,5 @@ export const LoginPage = () => {
     </div>
   );
 };
+
+export default LoginPage;
