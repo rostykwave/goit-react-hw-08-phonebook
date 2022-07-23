@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from './redux/auth';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import SharedLayout from 'layout/SharedLayout';
 import { PrivateRoutes } from 'components/PrivateRoutes';
 import { PublicRoutes } from 'components/PublicRoutes';
 import { lazy } from 'react';
 
-const HomePage = lazy(() => import('pages/HomePage'));
 const LoginPage = lazy(() => import('pages/LoginPage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage'));
 const ContactsPage = lazy(() => import('pages/ContactsPage'));
@@ -27,7 +26,7 @@ export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<HomePage />} />
+        <Route index element={<Navigate to="/contacts" />} />
         <Route element={<PublicRoutes />}>
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
