@@ -40,7 +40,9 @@ export const App = () => {
   );
 };
 
-///Formik
+//contacts edit modal
 //Material UI
-//Authnav folder etc
+
+///Formik//done
+//Authnav folder etc//done
 //SharedComponent//done

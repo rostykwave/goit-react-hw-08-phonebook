@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from 'redux/store';
 import { theme } from 'styleConfig/theme';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from '@emotion/react';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
