@@ -40,7 +40,7 @@ const LoginPage = () => {
               <ErrorMessage name="password" component="div" />
             </label>
             <button type="submit" disabled={isSubmitting}>
-              Submit
+              Log in
             </button>
           </Form>
         )}
