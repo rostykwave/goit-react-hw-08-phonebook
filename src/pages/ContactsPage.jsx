@@ -1,10 +1,10 @@
-import { Container } from 'components/Container';
-import { ContactForm } from 'components/ContactForm';
 import { ContactList } from 'components/ContactList';
 import { Filter } from 'components/Filter';
 import { useEffect } from 'react';
 import { contactsOperations } from 'redux/contacts';
 import { useDispatch } from 'react-redux';
+import { Container } from '@mui/system';
+import { AddContact } from 'components/AddContact';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -14,12 +14,11 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <Container>
-      <h1>PhoneBook</h1>
-      <ContactForm />
-      <h1>Contacts</h1>
+    <Container maxWidth="sm">
       <Filter />
       <ContactList />
+
+      <AddContact />
     </Container>
   );
 };

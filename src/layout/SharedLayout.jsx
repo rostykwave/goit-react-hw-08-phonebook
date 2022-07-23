@@ -1,12 +1,14 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-import { Container } from 'components/Container';
-import { AppBar } from 'components/AppBar';
+
+import { Header } from 'components/Header/Header';
+import { Container } from '@mui/material';
 
 const SharedLayout = () => {
   return (
     <>
-      <AppBar />
+      {/* <AppBar /> */}
+      <Header />
 
       <Container>
         <Suspense fallback={<div>Loading page...</div>}>
