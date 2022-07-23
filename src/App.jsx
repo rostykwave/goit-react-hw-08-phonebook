@@ -26,15 +26,15 @@ export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<Navigate to="/contacts" />} />
+        <Route index element={<Navigate to="contacts" />} />
         <Route element={<PublicRoutes />}>
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="login" element={<LoginPage />} />
         </Route>
         <Route element={<PrivateRoutes />}>
-          <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="contacts" element={<ContactsPage />} />
         </Route>
-        <Route path="/*" element={<NotFoundPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );
