@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/983.60a819c2.chunk.js","mappings":"2KAUA,UARiB,WACf,OACE,SAAC,IAAD,WACE","sources":["pages/HomePage.jsx"],"sourcesContent":["import { Container } from 'components/Container';\n\nconst HomePage = () => {\n  return (\n    <Container>\n      <h1>Hello</h1>\n    </Container>\n  );\n};\n\nexport default HomePage;\n"],"names":[],"sourceRoot":""}
