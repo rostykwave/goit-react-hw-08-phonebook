@@ -3,11 +3,9 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-// import Button from '@mui/material/Button';
-// import Typography from '@mui/material/Typography';
 import { Fab } from '@mui/material';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
-import { ContactForm } from 'components/ContactForm';
+import { AddContactForm } from 'components/AddContactForm';
 
 const style = {
   position: 'absolute',
@@ -16,7 +14,6 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 400,
   bgcolor: 'background.paper',
-  // border: '2px solid #000',
   boxShadow: 24,
   p: 4,
   borderRadius: '4px',
@@ -55,7 +52,7 @@ export const AddContact = () => {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <ContactForm onAddContact={handleClose} />
+            <AddContactForm onAddContact={handleClose} />
           </Box>
         </Fade>
       </Modal>

@@ -1,4 +1,3 @@
-// import { DeleteBtn, Item, List } from './ContactList.styled';
 import {
   IconButton,
   Divider,
@@ -13,7 +12,7 @@ import { getVisibleContacts } from 'redux/contacts/contacts-selectors';
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 import EditIcon from '@mui/icons-material/Edit';
 import { useState } from 'react';
-import { EditContact } from 'components/EditContact/EditContact';
+import { EditContactModal } from 'components/EditContactModal';
 
 export const ContactList = () => {
   const [isEdit, setIsEdit] = useState(false);
@@ -31,8 +30,6 @@ export const ContactList = () => {
     console.log('edit');
     setIsEdit(true);
     setEditPerson(person);
-
-    // dispatch(contactsOperations.deleteContact(id))
   };
 
   return (
@@ -60,12 +57,11 @@ export const ContactList = () => {
       ) : (
         <Typography variant="h5">PhoneBook is empty</Typography>
       )}
-      <EditContact
+      <EditContactModal
         open={isEdit}
         onClose={handleCloseEdit}
         editPerson={editPerson}
       />
-      {/* {isEdit && <EditContact open={isEdit} onClose={handleClose} />} */}
     </List>
   );
 };

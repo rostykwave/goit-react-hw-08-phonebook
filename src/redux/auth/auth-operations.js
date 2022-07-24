@@ -2,14 +2,6 @@ import * as authAPI from 'services/auth-api';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const token = authAPI.token;
-// const token = {
-//   set(token) {
-//     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-//   },
-//   unset() {
-//     axios.defaults.headers.common.Authorization = '';
-//   },
-// };
 
 const register = createAsyncThunk(
   'auth/register',
