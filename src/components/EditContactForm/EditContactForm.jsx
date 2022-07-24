@@ -27,7 +27,9 @@ export const EditContactForm = ({ onEditApprove, editPerson }) => {
     },
     validationSchema: validationSchema,
     onSubmit: (values, { resetForm }) => {
-      dispatch(contactsOperations.addContact(values));
+      dispatch(
+        contactsOperations.patchContact({ ...values, id: editPerson.id })
+      );
       resetForm();
       onEditApprove();
     },

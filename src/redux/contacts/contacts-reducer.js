@@ -4,6 +4,7 @@ import {
   fetchContacts,
   addContact,
   deleteContact,
+  patchContact,
 } from 'redux/contacts/contacts-operations';
 
 const items = createReducer([], {
@@ -13,6 +14,12 @@ const items = createReducer([], {
 
   [deleteContact.fulfilled]: (state, { payload }) =>
     state.filter(({ id }) => id !== payload),
+
+  [patchContact.fulfilled]: (state, { payload }) =>
+    state.reduce((acc, contact) => {
+      contact.id === payload.id ? acc.push(payload) : acc.push(contact);
+      return acc;
+    }, []),
 });
 
 const loading = createReducer(false, {
@@ -25,6 +32,9 @@ const loading = createReducer(false, {
   [deleteContact.pending]: () => true,
   [deleteContact.fulfilled]: () => false,
   [deleteContact.rejected]: () => false,
+  [patchContact.pending]: () => true,
+  [patchContact.fulfilled]: () => false,
+  [patchContact.rejected]: () => false,
 });
 
 const filter = createReducer('', {
@@ -37,6 +47,8 @@ const error = createReducer(null, {
   [addContact.pending]: () => null,
   [deleteContact.rejected]: (_, action) => action.payload,
   [deleteContact.pending]: () => null,
+  [patchContact.rejected]: (_, action) => action.payload,
+  [patchContact.pending]: () => null,
 });
 
 export default combineReducers({

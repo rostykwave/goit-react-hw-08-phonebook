@@ -16,3 +16,7 @@ export async function deleteContact(contactId) {
   const { data } = await axios.delete(`/contacts/${contactId}`);
   return data;
 }
+export async function patchContact(contact, contactId) {
+  const { data } = await axios.patch(`/contacts/${contactId}`, contact);
+  return data;
+}
