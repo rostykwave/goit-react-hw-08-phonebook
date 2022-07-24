@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { contactsOperations } from 'redux/contacts';
 import { useDispatch } from 'react-redux';
 import { Container } from '@mui/system';
-import { AddContact } from 'components/AddContact';
+import { AddContactContainer } from 'components/AddContactContainer';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const ContactsPage = () => {
     <Container maxWidth="sm">
       <Filter />
       <ContactListContainer />
-      <AddContact />
+      <AddContactContainer />
     </Container>
   );
 };

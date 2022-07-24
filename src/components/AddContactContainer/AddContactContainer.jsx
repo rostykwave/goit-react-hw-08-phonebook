@@ -19,7 +19,7 @@ const style = {
   borderRadius: '4px',
 };
 
-export const AddContact = () => {
+export const AddContactContainer = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
