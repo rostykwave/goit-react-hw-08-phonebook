@@ -28,11 +28,11 @@
 import { createTheme } from '@mui/material';
 
 export const theme = createTheme({
-  // palette: {
-  //   primary: {
-  //     // main: red[500],
-  //   },
-  // },
+  palette: {
+    primary: {
+      main: '#394eff',
+    },
+  },
   typography: {
     user: {
       color: '#FFFF00',

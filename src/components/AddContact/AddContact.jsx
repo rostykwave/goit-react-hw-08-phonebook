@@ -36,8 +36,8 @@ export const AddContact = () => {
         size="medium"
         sx={{
           position: 'fixed',
-          right: '20px',
-          bottom: '25px',
+          right: '30px',
+          bottom: '35px',
         }}
       >
         <PersonAddAlt1Icon />

@@ -13,7 +13,7 @@ export const UserMenu = () => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        minWidth: '240px',
+        minWidth: '180px',
       }}
     >
       <Typography variant="body1">

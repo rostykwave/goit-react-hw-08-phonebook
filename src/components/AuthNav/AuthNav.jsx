@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const AuthNav = () => {
   return (
-    <div>
+    <nav>
       <Button>
         <Link to="/register" style={{ textDecoration: 'none', color: 'white' }}>
           Register
@@ -14,6 +14,6 @@ export const AuthNav = () => {
           Login
         </Link>
       </Button>
-    </div>
+    </nav>
   );
 };

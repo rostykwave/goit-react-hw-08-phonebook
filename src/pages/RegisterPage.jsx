@@ -35,10 +35,11 @@ const RegisterPage = () => {
     <Container
       sx={{
         mt: '1em',
-        maxWidth: '300px',
+        // maxWidth: '300px',
         height: '70vh',
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
       <form onSubmit={formik.handleSubmit}>

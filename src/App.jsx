@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { authOperations } from './redux/auth';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import SharedLayout from 'layout/SharedLayout';
 import { PrivateRoutes } from 'components/PrivateRoutes';
 import { PublicRoutes } from 'components/PublicRoutes';
 import { lazy } from 'react';
+import { authSelectors } from 'redux/auth';
+import { Skeleton } from '@mui/material';
 
 const LoginPage = lazy(() => import('pages/LoginPage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage'));
@@ -14,6 +16,7 @@ const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
+  const isFetchingCurrentUser = useSelector(authSelectors.getIsLoadingStatus);
 
   // useEffect(() => {
   //   dispatch(contactsOperations.fetchContacts());
@@ -23,7 +26,9 @@ export const App = () => {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
 
-  return (
+  return isFetchingCurrentUser ? (
+    <Skeleton sx={{ height: 64 }} animation="wave" variant="rectangular" />
+  ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Navigate to="contacts" />} />

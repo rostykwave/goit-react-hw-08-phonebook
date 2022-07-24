@@ -34,10 +34,11 @@ const LoginPage = () => {
     <Container
       sx={{
         mt: '1em',
-        maxWidth: '300px',
+        // maxWidth: '300px',
         height: '80vh',
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
       <form onSubmit={formik.handleSubmit}>
