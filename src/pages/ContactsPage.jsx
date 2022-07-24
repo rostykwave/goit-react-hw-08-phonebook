@@ -17,7 +17,6 @@ const ContactsPage = () => {
     <Container maxWidth="sm">
       <Filter />
       <ContactList />
-
       <AddContact />
     </Container>
   );

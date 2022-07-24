@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 
 import { Header } from 'components/Header/Header';
-import { Container } from '@mui/material';
+import { Container, Skeleton } from '@mui/material';
 
 const SharedLayout = () => {
   return (
@@ -10,7 +10,15 @@ const SharedLayout = () => {
       <Header />
 
       <Container sx={{ mt: '80px' }}>
-        <Suspense fallback={<div>Loading page...</div>}>
+        <Suspense
+          fallback={
+            <Skeleton
+              sx={{ height: 128 }}
+              animation="wave"
+              variant="rectangular"
+            />
+          }
+        >
           <Outlet />
         </Suspense>
       </Container>

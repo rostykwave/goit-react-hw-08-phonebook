@@ -18,10 +18,6 @@ export const App = () => {
   const dispatch = useDispatch();
   const isFetchingCurrentUser = useSelector(authSelectors.getIsLoadingStatus);
 
-  // useEffect(() => {
-  //   dispatch(contactsOperations.fetchContacts());
-  // }, [dispatch]);
-
   useEffect(() => {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
@@ -44,10 +40,3 @@ export const App = () => {
     </Routes>
   );
 };
-
-//contacts edit modal
-//Material UI
-
-///Formik//done
-//Authnav folder etc//done
-//SharedComponent//done
