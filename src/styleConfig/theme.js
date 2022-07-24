@@ -11,5 +11,13 @@ export const theme = createTheme({
       color: '#FFFF00',
       fontWeight: 'bold',
     },
+    contactName: {
+      fontWeight: '500',
+      fontSize: '23px',
+    },
+    contactNumber: {
+      fontWeight: 'light',
+      fontSize: '20px',
+    },
   },
 });

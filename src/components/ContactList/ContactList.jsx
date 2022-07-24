@@ -1,18 +1,10 @@
-import {
-  IconButton,
-  Divider,
-  List,
-  ListItem,
-  Typography,
-  Box,
-} from '@mui/material';
+import { Divider, List, ListItem, Typography } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { contactsOperations } from 'redux/contacts';
 import { getVisibleContacts } from 'redux/contacts/contacts-selectors';
-import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
-import EditIcon from '@mui/icons-material/Edit';
 import { useState } from 'react';
 import { EditContactModal } from 'components/EditContactModal';
+import { Contact } from 'components/Contact';
 
 export const ContactList = () => {
   const [isEdit, setIsEdit] = useState(false);
@@ -27,7 +19,6 @@ export const ContactList = () => {
   const dispatch = useDispatch();
   const onDeleteContact = id => dispatch(contactsOperations.deleteContact(id));
   const onEditContact = person => {
-    console.log('edit');
     setIsEdit(true);
     setEditPerson(person);
   };
@@ -36,22 +27,16 @@ export const ContactList = () => {
     <List>
       <Divider />
       {contacts.length > 0 ? (
-        contacts.map(({ id, name, number }) => (
+        contacts.map(contact => (
           <ListItem
-            key={id}
+            key={contact.id}
             sx={{ display: 'flex', justifyContent: 'space-between' }}
           >
-            <Typography variant="h5">
-              {name}: {number}
-            </Typography>
-            <Box>
-              <IconButton onClick={() => onEditContact({ id, name, number })}>
-                <EditIcon />
-              </IconButton>
-              <IconButton onClick={() => onDeleteContact(id)}>
-                <PersonRemoveIcon />
-              </IconButton>
-            </Box>
+            <Contact
+              contact={contact}
+              onEditContact={onEditContact}
+              onDeleteContact={onDeleteContact}
+            />
           </ListItem>
         ))
       ) : (
