@@ -4,7 +4,7 @@ import { authSelectors } from 'redux/auth';
 import { UserMenu } from 'components/UserMenu';
 import { AuthNav } from 'components/AuthNav';
 
-export const Header = () => {
+export const HeaderContainer = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <AppBar position="fixed">

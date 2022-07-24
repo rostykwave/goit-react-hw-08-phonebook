@@ -1,13 +1,12 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-
-import { Header } from 'components/Header/Header';
+import { HeaderContainer } from 'components/HeaderContainer';
 import { Container, Skeleton } from '@mui/material';
 
 const SharedLayout = () => {
   return (
     <>
-      <Header />
+      <HeaderContainer />
 
       <Container sx={{ mt: '80px' }}>
         <Suspense
