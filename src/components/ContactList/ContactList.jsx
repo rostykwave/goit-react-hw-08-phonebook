@@ -38,24 +38,28 @@ export const ContactList = () => {
   return (
     <List>
       <Divider />
-      {contacts.map(({ id, name, number }) => (
-        <ListItem
-          key={id}
-          sx={{ display: 'flex', justifyContent: 'space-between' }}
-        >
-          <Typography variant="h5">
-            {name}: {number}
-          </Typography>
-          <Box>
-            <IconButton onClick={() => onEditContact({ id, name, number })}>
-              <EditIcon />
-            </IconButton>
-            <IconButton onClick={() => onDeleteContact(id)}>
-              <PersonRemoveIcon />
-            </IconButton>
-          </Box>
-        </ListItem>
-      ))}
+      {contacts.length > 0 ? (
+        contacts.map(({ id, name, number }) => (
+          <ListItem
+            key={id}
+            sx={{ display: 'flex', justifyContent: 'space-between' }}
+          >
+            <Typography variant="h5">
+              {name}: {number}
+            </Typography>
+            <Box>
+              <IconButton onClick={() => onEditContact({ id, name, number })}>
+                <EditIcon />
+              </IconButton>
+              <IconButton onClick={() => onDeleteContact(id)}>
+                <PersonRemoveIcon />
+              </IconButton>
+            </Box>
+          </ListItem>
+        ))
+      ) : (
+        <Typography variant="h5">PhoneBook is empty</Typography>
+      )}
       <EditContact
         open={isEdit}
         onClose={handleCloseEdit}
