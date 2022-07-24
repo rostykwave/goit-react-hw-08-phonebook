@@ -1,6 +1,5 @@
 import { Button, TextField } from '@mui/material';
 import { useFormik } from 'formik';
-// import { Formik, Form, Field, ErrorMessage, useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../redux/auth';
 import * as yup from 'yup';
@@ -32,7 +31,15 @@ const LoginPage = () => {
   });
 
   return (
-    <Container sx={{ mt: '1em' }}>
+    <Container
+      sx={{
+        mt: '1em',
+        maxWidth: '300px',
+        height: '80vh',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
       <form onSubmit={formik.handleSubmit}>
         <TextField
           variant="standard"

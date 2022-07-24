@@ -7,10 +7,9 @@ import { Container } from '@mui/material';
 const SharedLayout = () => {
   return (
     <>
-      {/* <AppBar /> */}
       <Header />
 
-      <Container>
+      <Container sx={{ mt: '80px' }}>
         <Suspense fallback={<div>Loading page...</div>}>
           <Outlet />
         </Suspense>

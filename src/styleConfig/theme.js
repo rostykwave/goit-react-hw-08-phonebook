@@ -33,4 +33,12 @@ export const theme = createTheme({
   //     // main: red[500],
   //   },
   // },
+  typography: {
+    user: {
+      color: '#FFFF00',
+      fontWeight: 'bold',
+    },
+    // Disable h3 variant
+    // h3: undefined,
+  },
 });

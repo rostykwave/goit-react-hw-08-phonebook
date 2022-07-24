@@ -9,7 +9,7 @@ import { AuthNav } from 'components/AuthNav';
 export const Header = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           PhoneBook
