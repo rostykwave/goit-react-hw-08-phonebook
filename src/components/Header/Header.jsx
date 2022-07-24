@@ -9,7 +9,7 @@ export const Header = () => {
   return (
     <AppBar position="fixed">
       <Toolbar>
-        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" sx={{ flexGrow: 1, mr: '10px' }}>
           PhoneBook
         </Typography>
         {isLoggedIn ? <UserMenu /> : <AuthNav />}

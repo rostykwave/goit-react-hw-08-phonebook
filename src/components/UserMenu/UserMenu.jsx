@@ -5,7 +5,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
-  const name = useSelector(authSelectors.getUsername);
+  const email = useSelector(authSelectors.getUserEmail);
 
   return (
     <Box
@@ -17,7 +17,7 @@ export const UserMenu = () => {
       }}
     >
       <Typography variant="body1">
-        Greetings, <Typography variant="user"> {name}</Typography>!
+        Welcome, <Typography variant="user"> {email}</Typography>
       </Typography>
 
       <IconButton
