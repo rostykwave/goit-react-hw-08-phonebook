@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { EditContactModal } from 'components/EditContactModal';
 import { Contact } from 'components/Contact';
 
-export const ContactList = () => {
+export const ContactListContainer = () => {
   const [isEdit, setIsEdit] = useState(false);
   const [editPerson, setEditPerson] = useState({
     id: '',

@@ -7,7 +7,7 @@ export const Contact = ({ contact, onEditContact, onDeleteContact }) => {
   const { id, name, number } = contact;
   return (
     <>
-      <Typography paragraph="true" variant="contactNumber">
+      <Typography paragraph={true} variant="contactNumber">
         <Typography variant="contactName">{name}: </Typography>
         {number}
       </Typography>

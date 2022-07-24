@@ -1,4 +1,4 @@
-import { ContactList } from 'components/ContactList';
+import { ContactListContainer } from 'components/ContactListContainer';
 import { Filter } from 'components/Filter';
 import { useEffect } from 'react';
 import { contactsOperations } from 'redux/contacts';
@@ -16,7 +16,7 @@ const ContactsPage = () => {
   return (
     <Container maxWidth="sm">
       <Filter />
-      <ContactList />
+      <ContactListContainer />
       <AddContact />
     </Container>
   );
