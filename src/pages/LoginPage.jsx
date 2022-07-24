@@ -1,7 +1,7 @@
-import { Button, TextField } from '@mui/material';
+import { Alert, Button, TextField } from '@mui/material';
 import { useFormik } from 'formik';
-import { useDispatch } from 'react-redux';
-import { authOperations } from '../redux/auth';
+import { useDispatch, useSelector } from 'react-redux';
+import { authOperations, authSelectors } from '../redux/auth';
 import * as yup from 'yup';
 import { Container } from '@mui/system';
 
@@ -30,6 +30,8 @@ const LoginPage = () => {
     },
   });
 
+  const authError = useSelector(authSelectors.getAuthError);
+
   return (
     <Container
       sx={{
@@ -38,6 +40,7 @@ const LoginPage = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        flexDirection: 'column',
       }}
     >
       <form onSubmit={formik.handleSubmit}>
@@ -70,8 +73,12 @@ const LoginPage = () => {
           Log in
         </Button>
       </form>
+      {authError === 'Request failed with status code 400' && (
+        <Alert variant="outlined" severity="error" sx={{ mt: '20px' }}>
+          Login or password is not valid. Try one more time!
+        </Alert>
+      )}
     </Container>
   );
-
-    }
+};
 export default LoginPage;
