@@ -1,8 +1,8 @@
 import { AppBar, Toolbar, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { authSelectors } from 'redux/auth';
-import { UserMenu } from 'components/UserMenu';
-import { AuthNav } from 'components/AuthNav';
+import { UserMenu } from 'layout/common/UserMenu';
+import { AuthNav } from 'layout/common/AuthNav';
 
 export const HeaderContainer = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);

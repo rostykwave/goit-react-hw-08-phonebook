@@ -3,7 +3,9 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-import { EditContactForm } from 'components/EditContactForm';
+import { Fab } from '@mui/material';
+import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
+import { AddContactForm } from 'components/ContactForms/AddContactForm';
 
 const style = {
   position: 'absolute',
@@ -17,13 +19,26 @@ const style = {
   borderRadius: '4px',
 };
 
-export const EditContactModal = ({ onClose, open, editPerson }) => {
-  const handleClose = () => {
-    onClose();
-  };
+export const AddContactSection = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <div>
+      <Fab
+        onClick={handleOpen}
+        aria-label="add"
+        color="primary"
+        size="medium"
+        sx={{
+          position: 'fixed',
+          right: '30px',
+          bottom: '35px',
+        }}
+      >
+        <PersonAddAlt1Icon />
+      </Fab>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -37,10 +52,7 @@ export const EditContactModal = ({ onClose, open, editPerson }) => {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <EditContactForm
-              onEditApprove={handleClose}
-              editPerson={editPerson}
-            />
+            <AddContactForm onAddContact={handleClose} />
           </Box>
         </Fade>
       </Modal>

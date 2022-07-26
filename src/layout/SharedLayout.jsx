@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-import { HeaderContainer } from 'components/HeaderContainer';
+import { HeaderContainer } from 'layout/common/HeaderContainer';
 import { Container, Skeleton } from '@mui/material';
 
 const SharedLayout = () => {

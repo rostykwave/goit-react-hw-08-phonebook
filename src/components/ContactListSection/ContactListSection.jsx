@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { contactsOperations } from 'redux/contacts';
 import { getVisibleContacts } from 'redux/contacts/contacts-selectors';
 import { useState } from 'react';
-import { EditContactModal } from 'components/EditContactModal';
+import { EditContactModal } from 'components/ContactForms/EditContactModal';
 import { Contact } from 'components/Contact';
 
-export const ContactListContainer = () => {
+export const ContactListSection = () => {
   const [isEdit, setIsEdit] = useState(false);
   const [editPerson, setEditPerson] = useState({
     id: '',

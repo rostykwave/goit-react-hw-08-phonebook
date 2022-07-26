@@ -1,1 +1,0 @@
-export { ContactListContainer } from './ContactListContainer';
