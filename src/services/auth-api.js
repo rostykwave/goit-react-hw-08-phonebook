@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { BASE_URL } from 'constants/apiConstants';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+axios.defaults.baseURL = BASE_URL;
 
 export const token = {
   set(token) {
