@@ -2,19 +2,8 @@ import { Button, TextField } from '@mui/material';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { contactsOperations } from 'redux/contacts';
-import * as yup from 'yup';
 import { Container } from '@mui/system';
-
-const validationSchema = yup.object({
-  name: yup
-    .string('Enter your name')
-
-    .required('Name is required'),
-  number: yup
-    .string('Enter your number')
-    .min(6, 'Number should be of minimum 8 characters length')
-    .required('Number is required'),
-});
+import { contactValidationSchema } from 'schema/contactValidationSchema';
 
 export const AddContactForm = ({ onAddContact }) => {
   const dispatch = useDispatch();
@@ -24,7 +13,7 @@ export const AddContactForm = ({ onAddContact }) => {
       name: '',
       number: '',
     },
-    validationSchema: validationSchema,
+    validationSchema: contactValidationSchema,
     onSubmit: (values, { resetForm }) => {
       dispatch(contactsOperations.addContact(values));
       resetForm();

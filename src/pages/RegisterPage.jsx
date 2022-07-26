@@ -2,19 +2,8 @@ import { Button, TextField } from '@mui/material';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../redux/auth';
-import * as yup from 'yup';
 import { Container } from '@mui/system';
-
-const validationSchema = yup.object({
-  email: yup
-    .string('Enter your email')
-    .email('Enter a valid email')
-    .required('Email is required'),
-  password: yup
-    .string('Enter your password')
-    .min(8, 'Password should be of minimum 8 characters length')
-    .required('Password is required'),
-});
+import { RegisterValidationSchema } from 'schema/RegisterValidationSchema';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
@@ -25,7 +14,7 @@ const RegisterPage = () => {
       email: '',
       password: '',
     },
-    validationSchema: validationSchema,
+    validationSchema: RegisterValidationSchema,
     onSubmit: (values, { setSubmitting }) => {
       dispatch(authOperations.register(values));
     },
